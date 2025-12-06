@@ -1,0 +1,521 @@
+<!doctype html>
+<html lang="hi">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>UniqueSex Massage Center</title>
+  <meta name="description" content="UniqueSex Massage Center - Relaxation, Deep Tissue, Aroma Therapy. Book online." />
+
+  <style>
+    /* ---------- Variables ---------- */
+    :root{
+      --bg1: #071027;
+      --bg2: #081426;
+      --card: rgba(255,255,255,0.03);
+      --muted: #9fb0c8;
+      --accent1: #ff7a18;
+      --accent2: #ffb86b;
+      --glass: rgba(255,255,255,0.03);
+      --radius:16px;
+      --maxwidth:1100px;
+      font-family: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+      color-scheme: dark;
+    }
+
+    /* ---------- Base ---------- */
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      margin:0;
+      background: radial-gradient(1200px 600px at 10% 10%, rgba(255,122,24,0.06), transparent),
+                  radial-gradient(1000px 500px at 90% 90%, rgba(15,123,255,0.03), transparent),
+                  linear-gradient(180deg,var(--bg1),var(--bg2));
+      color:#eaf2fb;
+      -webkit-font-smoothing:antialiased;
+      -moz-osx-font-smoothing:grayscale;
+      line-height:1.45;
+      padding:28px 18px;
+      display:flex;
+      justify-content:center;
+    }
+    .wrap{width:100%;max-width:var(--maxwidth);}
+
+    /* ---------- Header / Hero ---------- */
+    header{
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      gap:14px;
+      margin-bottom:18px;
+    }
+    .brand{
+      display:flex;align-items:center;gap:12px;
+    }
+    .logo{
+      width:64px;height:64px;border-radius:14px;
+      background:linear-gradient(135deg,var(--accent1),var(--accent2));
+      display:flex;align-items:center;justify-content:center;font-weight:800;color:#081026;font-size:20px;
+      box-shadow:0 8px 30px rgba(255,122,24,0.12);
+    }
+
+    /* Glowing title */
+    .site-title{
+      font-size:24px;
+      font-weight:800;
+      letter-spacing:0.6px;
+      margin:0;
+      line-height:1;
+      background: linear-gradient(90deg,#fff,#ffd9c0,#fff);
+      -webkit-background-clip:text;
+      background-clip:text;
+      color:transparent;
+      text-shadow: 0 0 12px rgba(255,160,80,0.12);
+      animation: glow 3s ease-in-out infinite;
+      display:inline-block;
+    }
+    @keyframes glow{
+      0%{text-shadow:0 0 6px rgba(255,160,80,0.06), 0 0 0 rgba(0,0,0,0)}
+      50%{text-shadow:0 0 18px rgba(255,160,80,0.25), 0 0 6px rgba(255,122,24,0.08)}
+      100%{text-shadow:0 0 6px rgba(255,160,80,0.06)}
+    }
+
+    .lead{color:var(--muted);font-size:13px;margin-top:6px}
+
+    /* ---------- Layout sections ---------- */
+    .hero{
+      background: linear-gradient(180deg, rgba(255,255,255,0.02), transparent);
+      border-radius:20px;
+      padding:22px;
+      display:grid;
+      grid-template-columns:1fr 320px;
+      gap:18px;
+      align-items:center;
+      box-shadow:0 14px 40px rgba(2,6,23,0.5);
+      border:1px solid rgba(255,255,255,0.02);
+      margin-bottom:20px;
+    }
+    .hero-left h2{margin:0 0 8px 0}
+    .hero-left p{color:var(--muted)}
+
+    .cta-row{display:flex;gap:10px;margin-top:14px;align-items:center}
+    .btn{
+      background:linear-gradient(90deg,var(--accent1),var(--accent2));
+      border:none;padding:12px 16px;border-radius:12px;color:#071026;font-weight:700;cursor:pointer;
+      box-shadow:0 10px 30px rgba(255,122,24,0.12);
+    }
+    .btn.ghost{
+      background:transparent;border:1px solid rgba(255,255,255,0.04);color:var(--muted);
+    }
+
+    .hero-right{display:flex;flex-direction:column;gap:10px;align-items:center}
+    .cover{
+      width:100%;height:200px;border-radius:12px;background:linear-gradient(180deg,rgba(255,255,255,0.02),transparent);
+      display:flex;align-items:center;justify-content:center;color:var(--muted);font-size:14px;
+      border:1px dashed rgba(255,255,255,0.03);
+    }
+
+    /* ---------- Services ---------- */
+    .services{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+      gap:14px;margin-bottom:18px;
+    }
+    .service-card{
+      background:var(--card);padding:16px;border-radius:12px;border:1px solid rgba(255,255,255,0.02);
+      transition:transform .28s ease, box-shadow .28s ease;
+    }
+    .service-card:hover{transform:translateY(-6px);box-shadow:0 18px 40px rgba(2,6,23,0.6)}
+    .service-title{font-weight:700;margin-bottom:6px}
+    .service-desc{color:var(--muted);font-size:13px}
+
+    /* ---------- Staff ---------- */
+    .section-title{margin:26px 0 12px 0;font-size:20px}
+    .staff-grid{
+      display:grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap:14px;
+      margin-bottom:18px;
+    }
+    .staff-card{
+      background: linear-gradient(180deg, rgba(255,255,255,0.02), transparent);
+      border-radius:12px;padding:14px;border:1px solid rgba(255,255,255,0.02);
+      display:flex;flex-direction:column;gap:8px;
+    }
+    .staff-card h3{margin:0;font-size:18px}
+    .staff-meta{color:var(--muted);font-size:13px}
+    .staff-perf{font-size:13px;color:var(--muted)}
+
+    /* Action row inside staff card */
+    .staff-actions{display:flex;justify-content:space-between;align-items:center;margin-top:6px}
+    .pill{background:rgba(255,255,255,0.03);padding:6px 10px;border-radius:999px;color:var(--muted);font-size:13px}
+
+    /* ---------- Details / Testimonials / Extra content to make scroll ---------- */
+    .details{
+      margin-top:12px;background:linear-gradient(180deg, rgba(255,255,255,0.01), transparent);padding:16px;border-radius:12px;border:1px solid rgba(255,255,255,0.02);
+    }
+    .detail-item{margin-bottom:12px}
+    .testimonial{
+      background: linear-gradient(90deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+      padding:12px;border-radius:10px;border:1px solid rgba(255,255,255,0.02);
+      margin-bottom:10px;color:var(--muted)
+    }
+
+    /* ---------- Booking area (form) ---------- */
+    #bookingSection{
+      margin-top:28px;padding:18px;border-radius:14px;background:linear-gradient(180deg, rgba(255,255,255,0.015), transparent);
+      border:1px solid rgba(255,255,255,0.02);
+    }
+    .booking-grid{display:grid;grid-template-columns:1fr 320px;gap:18px}
+    .form-card{padding:8px}
+    label{display:block;color:var(--muted);font-size:13px;margin-top:8px}
+    input,textarea,select{
+      width:100%;padding:10px;border-radius:8px;border:1px solid rgba(255,255,255,0.06);
+      background:transparent;color:#eaf2fb;margin-top:6px;
+    }
+    .submit-row{display:flex;gap:10px;align-items:center;margin-top:12px}
+
+    /* QR preview */
+    .qr-large{width:100%;border-radius:10px;background:#071027;padding:12px;border:1px solid rgba(255,255,255,0.02)}
+    .qr-large img{width:100%;height:100%;object-fit:contain;display:block}
+
+    /* sticky whatsapp + small qr */
+    .sticky{
+      position:fixed;right:18px;bottom:18px;display:flex;flex-direction:column;gap:10px;align-items:center;z-index:1200
+    }
+    .wa-btn{width:56px;height:56px;border-radius:12px;background:linear-gradient(180deg,#20d46a,#14a44a);display:flex;align-items:center;justify-content:center;color:#071026;font-weight:800;font-size:20px;text-decoration:none}
+    .qr-small{width:82px;height:82px;border-radius:12px;background:var(--glass);display:flex;align-items:center;justify-content:center;padding:8px;border:1px solid rgba(255,255,255,0.02)}
+
+    /* ---------- Footer ---------- */
+    footer{margin-top:28px;text-align:center;color:var(--muted);font-size:13px;padding-bottom:40px}
+
+    /* Responsive tweaks */
+    @media (max-width:980px){
+      .hero{grid-template-columns:1fr}
+      .booking-grid{grid-template-columns:1fr}
+    }
+
+  </style>
+</head>
+<body>
+  <div class="wrap">
+
+    <!-- HEADER -->
+    <header>
+      <div class="brand">
+        <div class="logo" aria-hidden>US</div>
+        <div>
+          <div class="site-title">UniqueSex Massage Center</div>
+          <div class="lead">आराम, प्राइवेसी और प्रोफेशनल केयर — book now</div>
+        </div>
+      </div>
+
+      <div style="text-align:right">
+        <div style="color:var(--muted);font-size:13px">Open: 10:00 — 23:00</div>
+      </div>
+    </header>
+
+    <!-- HERO -->
+    <section class="hero" id="top">
+      <div class="hero-left">
+        <h2>Relax • Renew • Restore</h2>
+        <p>हम पेशेवर मसाज सेवाएँ देते हैं — Deep Tissue, Relaxation, Aroma Therapy और Special Packages। नीचे staff देखें और 'Book' पर क्लिक करें — booking फॉर्म खुद-ब-खुद नीचे खुलेगा।</p>
+
+        <div class="cta-row">
+          <button class="btn" onclick="scrollToSection('bookingSection')">Book Now</button>
+          <button class="btn ghost" onclick="scrollToSection('services')">Our Services</button>
+        </div>
+
+        <!-- quick highlights -->
+        <div style="display:flex;gap:10px;margin-top:16px;flex-wrap:wrap">
+          <div class="pill">Private Rooms</div>
+          <div class="pill">Certified Therapists</div>
+          <div class="pill">Hygienic</div>
+          <div class="pill">Secure Payment</div>
+        </div>
+      </div>
+
+      <aside class="hero-right">
+        <div class="cover">
+          <!-- replace with your cover image: assets/cover-placeholder.jpg -->
+          <div style="text-align:center">
+            <strong style="display:block">Your Banner / Cover</strong>
+            <div style="color:var(--muted);margin-top:6px;font-size:13px">Replace with your image at <code>assets/cover-placeholder.jpg</code></div>
+          </div>
+        </div>
+
+        <div style="width:100%;text-align:center;color:var(--muted);font-size:13px">
+          Instant support: <a href="https://wa.me/7891753004" target="_blank" style="color:var(--accent2);text-decoration:none">WhatsApp</a>
+        </div>
+      </aside>
+    </section>
+
+    <!-- SERVICES (make scroll) -->
+    <h3 class="section-title" id="services">Our Services</h3>
+    <div class="services">
+      <div class="service-card">
+        <div class="service-title">Relaxation Massage</div>
+        <div class="service-desc">Gentle strokes to calm mind & body. Perfect after long day — 30/60/90 min options.</div>
+      </div>
+      <div class="service-card">
+        <div class="service-title">Deep Tissue & Sports</div>
+        <div class="service-desc">Focused muscle work for athletes & chronic tension. Certified techniques for relief.</div>
+      </div>
+      <div class="service-card">
+        <div class="service-title">Aroma Therapy</div>
+        <div class="service-desc">Essential oil blends + relaxing massage for total rejuvenation.</div>
+      </div>
+      <div class="service-card">
+        <div class="service-title">Hot Stone & Swedish</div>
+        <div class="service-desc">Flow-based Swedish strokes + hot stone for deep relaxation and circulation.</div>
+      </div>
+    </div>
+
+    <!-- STAFF -->
+    <h3 class="section-title">Our Masseurs</h3>
+    <div class="staff-grid">
+
+      <div class="staff-card" id="card-aakash">
+        <h3>Aakash</h3>
+        <div class="staff-meta">Age: 26 • Deep Tissue & Sports</div>
+        <div class="staff-perf">Perfection: Precise muscle release, strong pressure control, certified (2 yrs).</div>
+        <div class="staff-actions">
+          <div class="pill">Expertise: Deep Tissue</div>
+          <div><button class="btn" onclick="bookAndScroll('Aakash',26)">Book</button></div>
+        </div>
+      </div>
+
+      <div class="staff-card" id="card-anand">
+        <h3>Anand</h3>
+        <div class="staff-meta">Age: 25 • Aroma Therapy Specialist</div>
+        <div class="staff-perf">Perfection: Aroma blends, gentle Swedish strokes, client comfort focus (3 yrs).</div>
+        <div class="staff-actions">
+          <div class="pill">Expertise: Aroma Therapy</div>
+          <div><button class="btn" onclick="bookAndScroll('Anand',25)">Book</button></div>
+        </div>
+      </div>
+
+      <div class="staff-card" id="card-tony">
+        <h3>Tony</h3>
+        <div class="staff-meta">Age: 29 • Swedish & Hot Stone</div>
+        <div class="staff-perf">Perfection: Flow & rhythm, hot stone placement, client relaxation (4 yrs).</div>
+        <div class="staff-actions">
+          <div class="pill">Expertise: Swedish</div>
+          <div><button class="btn" onclick="bookAndScroll('Tony',29)">Book</button></div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- DETAILS / MORE CONTENT (to ensure 3-4 scrolls) -->
+    <div class="details">
+      <div class="detail-item">
+        <strong>How we ensure quality</strong>
+        <p class="small" style="color:var(--muted);margin-top:6px">Regular training • Sanitized linens • Proper consultation before every session — हम पहले आपकी health history पूछते हैं और फिर treatment recommend करते हैं।</p>
+      </div>
+
+      <div class="detail-item">
+        <strong>Price & Packages</strong>
+        <p class="small" style="color:var(--muted);margin-top:6px">Starter 30min — ₹499 | Standard 60min — ₹899 | Premium 90min — ₹1299 (couple packages अलग से उपलब्ध)</p>
+      </div>
+
+      <div style="margin-top:16px">
+        <strong>Customer Testimonials</strong>
+        <div class="testimonial">"बहुत professional service — कमरे साफ़ और therapist बहुत अच्छे थे." — Ritu</div>
+        <div class="testimonial">"Deep tissue session से मेरी कमर दर्द में राहत मिली।" — Vikram</div>
+      </div>
+    </div>
+
+    <!-- BOOKING / FORM SECTION -->
+    <section id="bookingSection" aria-labelledby="bookingTitle">
+      <h3 id="bookingTitle" class="section-title">Booking & Payment</h3>
+
+      <div class="booking-grid">
+        <!-- FORM LEFT -->
+        <div class="form-card">
+          <div style="background:var(--card);padding:14px;border-radius:12px;border:1px solid rgba(255,255,255,0.02)">
+            <div style="display:flex;justify-content:space-between;align-items:center">
+              <div>
+                <div style="color:var(--muted);font-size:13px">Selected Masseur</div>
+                <h3 id="selStaff">—</h3>
+                <div style="color:var(--muted);font-size:13px" id="selStaffAge">—</div>
+              </div>
+              <div style="text-align:right">
+                <div class="pill">Secure</div>
+              </div>
+            </div>
+
+            <form id="mainBookingForm" onsubmit="handleBooking(event)">
+              <input type="hidden" id="formStaff" name="staff">
+
+              <label for="name">Name</label>
+              <input id="name" name="name" type="text" required placeholder="आपका नाम">
+
+              <label for="age">Age</label>
+              <input id="age" name="age" type="text" required placeholder="उम्र">
+
+              <label for="gender">Gender</label>
+              <select id="gender" name="gender">
+                <option>Male</option>
+                <option>Female</option>
+              </select>
+
+              <label for="address">Address</label>
+              <textarea id="address" name="address" rows="2" placeholder="पता" required></textarea>
+
+              <label for="phone">Mobile Number</label>
+              <input id="phone" name="phone" type="tel" pattern="[0-9]{10}" placeholder="10 digit mobile" required>
+
+              <div class="submit-row">
+                <button class="btn" type="submit">Submit Booking</button>
+                <button type="button" class="btn ghost" onclick="clearForm()">Clear</button>
+                <a class="btn ghost" href="#" onclick="openWhatsApp()">Contact</a>
+              </div>
+
+              <div id="formMsg" style="color:var(--muted);font-size:13px;margin-top:10px"></div>
+            </form>
+          </div>
+        </div>
+
+        <!-- RIGHT: QR / Payment preview -->
+        <aside>
+          <div class="qr-large">
+            <!-- Replace with your actual QR image -->
+            <img id="qrImg" src="assets/qr-placeholder.png" alt="QR for payment">
+          </div>
+
+          <div style="margin-top:12px;color:var(--muted);font-size:13px">
+            <strong>Scan to Pay</strong>
+            <div style="margin-top:8px">QR से payment करें — payment confirm होने के बाद हम booking confirm करेंगे। या नीचे form submit करके पहले request भेजें।</div>
+          </div>
+
+          <div style="margin-top:10px;display:flex;gap:8px">
+            <button class="btn ghost" onclick="copyQR()">Copy QR Link</button>
+            <a class="btn" id="payNowBtn" href="#" onclick="openWhatsAppForPayment(event)">Pay / Confirm</a>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <footer>
+      © UniqueSex Massage Center — Address / Policies replaceable. Support: <a href="https://wa.me/7891753004" target="_blank" style="color:var(--accent2);text-decoration:none">WhatsApp</a>
+    </footer>
+  </div>
+
+  <!-- Sticky WA + QR -->
+  <div class="sticky" aria-hidden>
+    <a class="wa-btn" id="waSticky" href="https://wa.me/7891753004" target="_blank">💬</a>
+    <div class="qr-small">
+      <img src="assets/qr-placeholder.png" style="width:100%;height:100%;object-fit:contain" alt="QR">
+    </div>
+  </div>
+
+  <!-- ---------- Scripts ---------- -->
+  <script>
+    // Config
+    const whatsappNumber = '7891753004';
+    const qrPath = 'assets/qr-placeholder.png'; // change to your QR image
+
+    // utility: smooth scroll to section
+    function scrollToSection(id){
+      const el = document.getElementById(id);
+      if(!el) return;
+      el.scrollIntoView({behavior:'smooth', block:'start'});
+    }
+
+    // When Book button in staff clicked: fill form + scroll
+    function bookAndScroll(name, age){
+      document.getElementById('selStaff').textContent = name;
+      document.getElementById('selStaffAge').textContent = 'Age: ' + age;
+      document.getElementById('formStaff').value = name;
+      // prefill a bit (optional)
+      // scroll
+      scrollToSection('bookingSection');
+      // small highlight
+      highlightElement(document.getElementById('bookingSection'));
+    }
+
+    // open main contact WA with prefilled message (for payment/confirm)
+    function openWhatsApp(){
+      const staff = document.getElementById('formStaff').value || '—';
+      const name = document.getElementById('name').value || '';
+      const phone = document.getElementById('phone').value || '';
+      const text = encodeURIComponent(`Hello, I (${name}) want to book with ${staff}. Mobile: ${phone}`);
+      window.open('https://wa.me/' + whatsappNumber + '?text=' + text, '_blank');
+    }
+
+    function openWhatsAppForPayment(e){
+      e.preventDefault();
+      const staff = document.getElementById('formStaff').value || '—';
+      const text = encodeURIComponent(`Hi, I want to pay/confirm booking for ${staff}.`);
+      window.open('https://wa.me/' + whatsappNumber + '?text=' + text, '_blank');
+    }
+
+    // form handling (demo)
+    function handleBooking(e){
+      e.preventDefault();
+      const staff = document.getElementById('formStaff').value || '—';
+      const name = document.getElementById('name').value.trim();
+      const phone = document.getElementById('phone').value.trim();
+      if(!name || !phone){ document.getElementById('formMsg').textContent = 'कृपया name और mobile भरें।'; return; }
+
+      // Here you would send data to your backend. For demo we open WhatsApp to notify.
+      const msg = encodeURIComponent(`Booking request\nName: ${name}\nMobile: ${phone}\nMasseur: ${staff}`);
+      window.open('https://wa.me/' + whatsappNumber + '?text=' + msg, '_blank');
+
+      document.getElementById('formMsg').textContent = 'Booking request भेज दी गई — हम WhatsApp पर contact करेंगे।';
+      // optional: reset form partially
+      // document.getElementById('mainBookingForm').reset();
+    }
+
+    function clearForm(){
+      document.getElementById('mainBookingForm').reset();
+      document.getElementById('selStaff').textContent = '—';
+      document.getElementById('selStaffAge').textContent = '—';
+      document.getElementById('formMsg').textContent = '';
+    }
+
+    // Copy QR link
+    function copyQR(){
+      if(navigator.clipboard){
+        navigator.clipboard.writeText(location.origin + '/' + qrPath).then(()=> alert('QR link copied to clipboard'));
+      } else {
+        prompt('QR link:', location.origin + '/' + qrPath);
+      }
+    }
+
+    // helper: quick highlight
+    function highlightElement(el){
+      const orig = el.style.boxShadow;
+      el.style.boxShadow = '0 8px 30px rgba(255,186,110,0.12)';
+      setTimeout(()=> el.style.boxShadow = orig, 1600);
+    }
+
+    // assign sticky WA link
+    document.getElementById('waSticky').href = 'https://wa.me/' + whatsappNumber;
+
+    // set QR src
+    document.getElementById('qrImg').src = qrPath;
+
+    // optional: if user clicks top "Book Now" preselect first masseur
+    document.querySelectorAll('.btn').forEach(btn=>{
+      // noop
+    });
+
+    // Accessibility: allow pressing Enter on staff-card to book (keyboard friendly)
+    document.querySelectorAll('.staff-card').forEach(card=>{
+      card.tabIndex = 0;
+      card.addEventListener('keydown', (e)=>{
+        if(e.key === 'Enter') {
+          const nameEl = card.querySelector('h3');
+          const name = nameEl ? nameEl.textContent.trim() : '';
+          const ageText = card.querySelector('.staff-meta') ? card.querySelector('.staff-meta').textContent : '';
+          const ageMatch = ageText.match(/Age:\s*(\d+)/);
+          const age = ageMatch ? ageMatch[1] : '';
+          if(name) bookAndScroll(name, age);
+        }
+      });
+    });
+
+  </script>
+</body>
+</html>
